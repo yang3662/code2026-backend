@@ -4,7 +4,7 @@ import axios from 'axios'
 
 // 创建 axios 实例
 const request = axios.create({
-    baseURL: import.meta.env.VITE_BASE_URL + '/api', // 2026.8.9 21：01 添加： + '/api'
+    baseURL: import.meta.env.VITE_BASE_URL, // + '/api', // 2026.8.9 21：01 添加： + '/api'
     timeout: 30000 // 后台接口超时设置
 
 })
