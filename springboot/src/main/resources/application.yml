@@ -1,0 +1,32 @@
+server:
+  port: 9090
+
+# 数据库配置
+spring:
+  output:
+    ansi:
+      enabled: always  # 强制启用彩色输出
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    # username: bt_project # ⚠️ 2026.8.14 17：00 在宝塔面板中创建新数据库用户名，不用原来的 root
+    password: root
+    # password: yang004156 # ⚠️ 2026.8.14 17：00 在宝塔面板中创建新数据库密码，不用原来的 root
+    url: jdbc:mysql://localhost:3306/code2026?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
+    # 2026.8.14 17:00 由url: jdbc:mysql://localhost:3306/code2026...修改为如下
+    # url: jdbc:mysql://127.0.0.1:3306/code2026?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+# 配置mybatis实体和xml映射
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+fileBaseUrl: http://localhost # ⭐ 重要：2026.8.14 17:00 修改为如下我的腾讯云轻量应用服务器公网IP如下
+# fileBaseUrl: http://154.8.234.97:9090
+

@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["pkgs.openjdk21", "pkgs.maven"]
+
+[phases.install]
+cmds = ["cd springboot && mvn clean package -DskipTests"]
+
+[phases.start]
+cmd = "cd springboot && java -jar -Dserver.port=$PORT target/*.jar"

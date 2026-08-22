@@ -1,0 +1,10 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://mysql.railway.internal:3306/railway?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: UxsRjcmkNzmKYaXgQrGNZZIHbPrLCfrk
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 5
